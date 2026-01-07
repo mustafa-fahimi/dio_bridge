@@ -1,8 +1,18 @@
-import 'package:dio_bridge/dio_bridge.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_bridge/dio_bridge.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 
-abstract class DioBridgeInterface {
+import 'dio_bridge_service_impl.dart';
+
+abstract class DioBridgeService {
+  factory DioBridgeService({
+    required Dio dio,
+    List<Interceptor>? interceptors,
+    Future<Either<String, DioBridgeTokenPair>> Function(String refreshToken)?
+    tokenRefreshCallback,
+    VoidCallback? onTokenExpired,
+  }) = DioBridgeServiceImpl;
   Future<void> initialize();
 
   Future<Either<DioException, Response<T>>> getMethod<T>(

@@ -1,12 +1,15 @@
-import 'package:dio_bridge/dio_bridge.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_bridge/dio_bridge.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 
+import 'dio_bridge_token_interceptor.dart';
+import 'dio_bridge_token_manager.dart';
+
 enum HttpMethod { get, post, put, delete, patch }
 
-class DioBridgeImplementation implements DioBridgeInterface {
-  DioBridgeImplementation({
+class DioBridgeServiceImpl implements DioBridgeService {
+  DioBridgeServiceImpl({
     required this.dio,
     this.interceptors,
     this.tokenRefreshCallback,
@@ -32,7 +35,9 @@ class DioBridgeImplementation implements DioBridgeInterface {
   final List<Interceptor>? interceptors;
   final Dio dio;
   final DioBridgeTokenManager _tokenManager;
-  final Future<Either<String, DioBridgeTokenPair>> Function(String refreshToken)?
+  final Future<Either<String, DioBridgeTokenPair>> Function(
+    String refreshToken,
+  )?
   tokenRefreshCallback;
   final VoidCallback? onTokenExpired;
 
