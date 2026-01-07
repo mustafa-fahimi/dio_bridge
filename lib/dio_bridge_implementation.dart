@@ -5,20 +5,20 @@ import 'package:fpdart/fpdart.dart';
 
 enum HttpMethod { get, post, put, delete, patch }
 
-class ASWImplementation implements ASWInterface {
-  ASWImplementation({
+class DioBridgeImplementation implements DioBridgeInterface {
+  DioBridgeImplementation({
     required this.dio,
     this.interceptors,
     this.tokenRefreshCallback,
     this.onTokenExpired,
-  }) : _tokenManager = ASWTokenManager.instance {
+  }) : _tokenManager = DioBridgeTokenManager.instance {
     final allInterceptors = [...?interceptors];
 
     if (!allInterceptors.any(
-      (interceptor) => interceptor is ASWTokenInterceptor,
+      (interceptor) => interceptor is DioBridgeTokenInterceptor,
     )) {
       allInterceptors.add(
-        ASWTokenInterceptor(
+        DioBridgeTokenInterceptor(
           tokenManager: _tokenManager,
           tokenRefreshCallback: tokenRefreshCallback,
           onTokenExpired: onTokenExpired,
@@ -31,8 +31,8 @@ class ASWImplementation implements ASWInterface {
 
   final List<Interceptor>? interceptors;
   final Dio dio;
-  final ASWTokenManager _tokenManager;
-  final Future<Either<String, ASWTokenPair>> Function(String refreshToken)?
+  final DioBridgeTokenManager _tokenManager;
+  final Future<Either<String, DioBridgeTokenPair>> Function(String refreshToken)?
   tokenRefreshCallback;
   final VoidCallback? onTokenExpired;
 
@@ -44,7 +44,7 @@ class ASWImplementation implements ASWInterface {
   Future<Either<DioException, Response<T>>> _performRequest<T>(
     HttpMethod method,
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     dynamic body,
     CancelToken? cancelToken,
   }) {
@@ -99,7 +99,7 @@ class ASWImplementation implements ASWInterface {
   @override
   Future<Either<DioException, Response<T>>> getMethod<T>(
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     CancelToken? cancelToken,
   }) => _performRequest(
     HttpMethod.get,
@@ -111,7 +111,7 @@ class ASWImplementation implements ASWInterface {
   @override
   Future<Either<DioException, Response<T>>> deleteMethod<T>(
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     dynamic body,
     CancelToken? cancelToken,
   }) => _performRequest(
@@ -125,7 +125,7 @@ class ASWImplementation implements ASWInterface {
   @override
   Future<Either<DioException, Response<T>>> postMethod<T>(
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     dynamic body,
     CancelToken? cancelToken,
   }) => _performRequest(
@@ -139,7 +139,7 @@ class ASWImplementation implements ASWInterface {
   @override
   Future<Either<DioException, Response<T>>> putMethod<T>(
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     dynamic body,
     CancelToken? cancelToken,
   }) => _performRequest(
@@ -153,7 +153,7 @@ class ASWImplementation implements ASWInterface {
   @override
   Future<Either<DioException, Response<T>>> patchMethod<T>(
     String endpoint, {
-    ASWOption? option = const ASWOption(),
+    DioBridgeOption? option = const DioBridgeOption(),
     dynamic body,
     CancelToken? cancelToken,
   }) => _performRequest(
@@ -165,14 +165,14 @@ class ASWImplementation implements ASWInterface {
   );
 
   @override
-  Future<void> setTokens(ASWTokenPair tokenPair) =>
+  Future<void> setTokens(DioBridgeTokenPair tokenPair) =>
       _tokenManager.setTokenPair(tokenPair);
 
   @override
   Future<void> clearTokens() => _tokenManager.clearTokens();
 
   @override
-  Future<ASWTokenPair?> get currentTokens => _tokenManager.tokenPair;
+  Future<DioBridgeTokenPair?> get currentTokens => _tokenManager.tokenPair;
 
   @override
   Future<bool> get isAuthenticated => _tokenManager.isAuthenticated;

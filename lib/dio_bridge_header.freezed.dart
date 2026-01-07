@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'a_s_w_header.dart';
+part of 'dio_bridge_header.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,20 +12,20 @@ part of 'a_s_w_header.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$ASWHeader {
+mixin _$DioBridgeHeader {
 
  Map<String, String>? get headers;
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ASWHeaderCopyWith<ASWHeader> get copyWith => _$ASWHeaderCopyWithImpl<ASWHeader>(this as ASWHeader, _$identity);
+$DioBridgeHeaderCopyWith<DioBridgeHeader> get copyWith => _$DioBridgeHeaderCopyWithImpl<DioBridgeHeader>(this as DioBridgeHeader, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ASWHeader&&const DeepCollectionEquality().equals(other.headers, headers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DioBridgeHeader&&const DeepCollectionEquality().equals(other.headers, headers));
 }
 
 
@@ -34,15 +34,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'ASWHeader(headers: $headers)';
+  return 'DioBridgeHeader(headers: $headers)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ASWHeaderCopyWith<$Res>  {
-  factory $ASWHeaderCopyWith(ASWHeader value, $Res Function(ASWHeader) _then) = _$ASWHeaderCopyWithImpl;
+abstract mixin class $DioBridgeHeaderCopyWith<$Res>  {
+  factory $DioBridgeHeaderCopyWith(DioBridgeHeader value, $Res Function(DioBridgeHeader) _then) = _$DioBridgeHeaderCopyWithImpl;
 @useResult
 $Res call({
  Map<String, String>? headers
@@ -53,14 +53,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$ASWHeaderCopyWithImpl<$Res>
-    implements $ASWHeaderCopyWith<$Res> {
-  _$ASWHeaderCopyWithImpl(this._self, this._then);
+class _$DioBridgeHeaderCopyWithImpl<$Res>
+    implements $DioBridgeHeaderCopyWith<$Res> {
+  _$DioBridgeHeaderCopyWithImpl(this._self, this._then);
 
-  final ASWHeader _self;
-  final $Res Function(ASWHeader) _then;
+  final DioBridgeHeader _self;
+  final $Res Function(DioBridgeHeader) _then;
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? headers = freezed,}) {
   return _then(_self.copyWith(
@@ -72,8 +72,8 @@ as Map<String, String>?,
 }
 
 
-/// Adds pattern-matching-related methods to [ASWHeader].
-extension ASWHeaderPatterns on ASWHeader {
+/// Adds pattern-matching-related methods to [DioBridgeHeader].
+extension DioBridgeHeaderPatterns on DioBridgeHeader {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -211,7 +211,7 @@ return data(_that.headers);case _:
 /// @nodoc
 
 
-class _FormData extends ASWHeader {
+class _FormData extends DioBridgeHeader {
   const _FormData({final  Map<String, String>? headers}): _headers = headers,super._();
   
 
@@ -225,7 +225,7 @@ class _FormData extends ASWHeader {
 }
 
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -244,14 +244,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'ASWHeader.formData(headers: $headers)';
+  return 'DioBridgeHeader.formData(headers: $headers)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$FormDataCopyWith<$Res> implements $ASWHeaderCopyWith<$Res> {
+abstract mixin class _$FormDataCopyWith<$Res> implements $DioBridgeHeaderCopyWith<$Res> {
   factory _$FormDataCopyWith(_FormData value, $Res Function(_FormData) _then) = __$FormDataCopyWithImpl;
 @override @useResult
 $Res call({
@@ -270,7 +270,7 @@ class __$FormDataCopyWithImpl<$Res>
   final _FormData _self;
   final $Res Function(_FormData) _then;
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? headers = freezed,}) {
   return _then(_FormData(
@@ -285,7 +285,7 @@ as Map<String, String>?,
 /// @nodoc
 
 
-class _Basic extends ASWHeader {
+class _Basic extends DioBridgeHeader {
   const _Basic({final  Map<String, String>? headers}): _headers = headers,super._();
   
 
@@ -299,7 +299,7 @@ class _Basic extends ASWHeader {
 }
 
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -318,14 +318,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'ASWHeader.basic(headers: $headers)';
+  return 'DioBridgeHeader.basic(headers: $headers)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$BasicCopyWith<$Res> implements $ASWHeaderCopyWith<$Res> {
+abstract mixin class _$BasicCopyWith<$Res> implements $DioBridgeHeaderCopyWith<$Res> {
   factory _$BasicCopyWith(_Basic value, $Res Function(_Basic) _then) = __$BasicCopyWithImpl;
 @override @useResult
 $Res call({
@@ -344,7 +344,7 @@ class __$BasicCopyWithImpl<$Res>
   final _Basic _self;
   final $Res Function(_Basic) _then;
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? headers = freezed,}) {
   return _then(_Basic(
@@ -359,7 +359,7 @@ as Map<String, String>?,
 /// @nodoc
 
 
-class _Data extends ASWHeader {
+class _Data extends DioBridgeHeader {
   const _Data({final  Map<String, String>? headers}): _headers = headers,super._();
   
 
@@ -373,7 +373,7 @@ class _Data extends ASWHeader {
 }
 
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -392,14 +392,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'ASWHeader.data(headers: $headers)';
+  return 'DioBridgeHeader.data(headers: $headers)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$DataCopyWith<$Res> implements $ASWHeaderCopyWith<$Res> {
+abstract mixin class _$DataCopyWith<$Res> implements $DioBridgeHeaderCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) _then) = __$DataCopyWithImpl;
 @override @useResult
 $Res call({
@@ -418,7 +418,7 @@ class __$DataCopyWithImpl<$Res>
   final _Data _self;
   final $Res Function(_Data) _then;
 
-/// Create a copy of ASWHeader
+/// Create a copy of DioBridgeHeader
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? headers = freezed,}) {
   return _then(_Data(

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'a_s_w_response_type.dart';
+part of 'dio_bridge_response_type.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'a_s_w_response_type.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$ASWResponseType {
+mixin _$DioBridgeResponseType {
 
 
 
@@ -20,7 +20,7 @@ mixin _$ASWResponseType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ASWResponseType);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DioBridgeResponseType);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ASWResponseType()';
+  return 'DioBridgeResponseType()';
 }
 
 
 }
 
 /// @nodoc
-class $ASWResponseTypeCopyWith<$Res>  {
-$ASWResponseTypeCopyWith(ASWResponseType _, $Res Function(ASWResponseType) __);
+class $DioBridgeResponseTypeCopyWith<$Res>  {
+$DioBridgeResponseTypeCopyWith(DioBridgeResponseType _, $Res Function(DioBridgeResponseType) __);
 }
 
 
-/// Adds pattern-matching-related methods to [ASWResponseType].
-extension ASWResponseTypePatterns on ASWResponseType {
+/// Adds pattern-matching-related methods to [DioBridgeResponseType].
+extension DioBridgeResponseTypePatterns on DioBridgeResponseType {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -186,7 +186,7 @@ return bytes();case _:
 /// @nodoc
 
 
-class _Json extends ASWResponseType {
+class _Json extends DioBridgeResponseType {
   const _Json(): super._();
   
 
@@ -206,7 +206,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ASWResponseType.json()';
+  return 'DioBridgeResponseType.json()';
 }
 
 
@@ -218,7 +218,7 @@ String toString() {
 /// @nodoc
 
 
-class _Stream extends ASWResponseType {
+class _Stream extends DioBridgeResponseType {
   const _Stream(): super._();
   
 
@@ -238,7 +238,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ASWResponseType.stream()';
+  return 'DioBridgeResponseType.stream()';
 }
 
 
@@ -250,7 +250,7 @@ String toString() {
 /// @nodoc
 
 
-class _Plain extends ASWResponseType {
+class _Plain extends DioBridgeResponseType {
   const _Plain(): super._();
   
 
@@ -270,7 +270,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ASWResponseType.plain()';
+  return 'DioBridgeResponseType.plain()';
 }
 
 
@@ -282,7 +282,7 @@ String toString() {
 /// @nodoc
 
 
-class _Bytes extends ASWResponseType {
+class _Bytes extends DioBridgeResponseType {
   const _Bytes(): super._();
   
 
@@ -302,7 +302,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ASWResponseType.bytes()';
+  return 'DioBridgeResponseType.bytes()';
 }
 
 

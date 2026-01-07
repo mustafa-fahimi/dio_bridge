@@ -1,12 +1,12 @@
-import 'package:dio_bridge/a_s_w_token_pair.dart';
+import 'package:dio_bridge/dio_bridge_token_pair.dart';
 import 'package:database_bridge/database_bridge.dart';
 
-class ASWTokenManager {
-  ASWTokenManager._();
+class DioBridgeTokenManager {
+  DioBridgeTokenManager._();
 
-  static ASWTokenManager? _instance;
-  static ASWTokenManager get instance {
-    _instance ??= ASWTokenManager._();
+  static DioBridgeTokenManager? _instance;
+  static DioBridgeTokenManager get instance {
+    _instance ??= DioBridgeTokenManager._();
     return _instance!;
   }
 
@@ -21,7 +21,7 @@ class ASWTokenManager {
   static const String _refreshTokenKey = 'refresh_token';
   static const String _expiresAtKey = 'token_expires_at';
 
-  Future<ASWTokenPair?> get tokenPair async {
+  Future<DioBridgeTokenPair?> get tokenPair async {
     final accessToken = await _storage.read(_accessTokenKey);
     if (accessToken == null) return null;
 
@@ -31,14 +31,14 @@ class ASWTokenManager {
         ? DateTime.fromMillisecondsSinceEpoch(int.parse(expiresAtStr))
         : null;
 
-    return ASWTokenPair(
+    return DioBridgeTokenPair(
       accessToken: accessToken,
       refreshToken: refreshToken,
       expiresAt: expiresAt,
     );
   }
 
-  Future<void> setTokenPair(ASWTokenPair tokenPair) async {
+  Future<void> setTokenPair(DioBridgeTokenPair tokenPair) async {
     await _storage.write(_accessTokenKey, tokenPair.accessToken);
 
     if (tokenPair.refreshToken != null) {

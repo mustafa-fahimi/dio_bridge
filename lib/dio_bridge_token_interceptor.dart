@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
-import 'package:dio_bridge/a_s_w_token_pair.dart';
+import 'package:dio_bridge/dio_bridge_token_pair.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 
-import 'a_s_w_token_manager.dart';
+import 'dio_bridge_token_manager.dart';
 
-class ASWTokenInterceptor extends Interceptor {
-  ASWTokenInterceptor({
+class DioBridgeTokenInterceptor extends Interceptor {
+  DioBridgeTokenInterceptor({
     required this.tokenManager,
     this.tokenRefreshCallback,
     this.onTokenExpired,
   });
 
-  final ASWTokenManager tokenManager;
-  final Future<Either<String, ASWTokenPair>> Function(String refreshToken)?
+  final DioBridgeTokenManager tokenManager;
+  final Future<Either<String, DioBridgeTokenPair>> Function(String refreshToken)?
   tokenRefreshCallback;
   final VoidCallback? onTokenExpired;
 

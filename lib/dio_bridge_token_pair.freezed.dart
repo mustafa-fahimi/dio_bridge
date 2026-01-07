@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'a_s_w_token_pair.dart';
+part of 'dio_bridge_token_pair.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,20 +12,20 @@ part of 'a_s_w_token_pair.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$ASWTokenPair {
+mixin _$DioBridgeTokenPair {
 
  String get accessToken; String? get refreshToken; DateTime? get expiresAt;
-/// Create a copy of ASWTokenPair
+/// Create a copy of DioBridgeTokenPair
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ASWTokenPairCopyWith<ASWTokenPair> get copyWith => _$ASWTokenPairCopyWithImpl<ASWTokenPair>(this as ASWTokenPair, _$identity);
+$DioBridgeTokenPairCopyWith<DioBridgeTokenPair> get copyWith => _$DioBridgeTokenPairCopyWithImpl<DioBridgeTokenPair>(this as DioBridgeTokenPair, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ASWTokenPair&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DioBridgeTokenPair&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
 }
 
 
@@ -34,15 +34,15 @@ int get hashCode => Object.hash(runtimeType,accessToken,refreshToken,expiresAt);
 
 @override
 String toString() {
-  return 'ASWTokenPair(accessToken: $accessToken, refreshToken: $refreshToken, expiresAt: $expiresAt)';
+  return 'DioBridgeTokenPair(accessToken: $accessToken, refreshToken: $refreshToken, expiresAt: $expiresAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ASWTokenPairCopyWith<$Res>  {
-  factory $ASWTokenPairCopyWith(ASWTokenPair value, $Res Function(ASWTokenPair) _then) = _$ASWTokenPairCopyWithImpl;
+abstract mixin class $DioBridgeTokenPairCopyWith<$Res>  {
+  factory $DioBridgeTokenPairCopyWith(DioBridgeTokenPair value, $Res Function(DioBridgeTokenPair) _then) = _$DioBridgeTokenPairCopyWithImpl;
 @useResult
 $Res call({
  String accessToken, String? refreshToken, DateTime? expiresAt
@@ -53,14 +53,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$ASWTokenPairCopyWithImpl<$Res>
-    implements $ASWTokenPairCopyWith<$Res> {
-  _$ASWTokenPairCopyWithImpl(this._self, this._then);
+class _$DioBridgeTokenPairCopyWithImpl<$Res>
+    implements $DioBridgeTokenPairCopyWith<$Res> {
+  _$DioBridgeTokenPairCopyWithImpl(this._self, this._then);
 
-  final ASWTokenPair _self;
-  final $Res Function(ASWTokenPair) _then;
+  final DioBridgeTokenPair _self;
+  final $Res Function(DioBridgeTokenPair) _then;
 
-/// Create a copy of ASWTokenPair
+/// Create a copy of DioBridgeTokenPair
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? accessToken = null,Object? refreshToken = freezed,Object? expiresAt = freezed,}) {
   return _then(_self.copyWith(
@@ -74,8 +74,8 @@ as DateTime?,
 }
 
 
-/// Adds pattern-matching-related methods to [ASWTokenPair].
-extension ASWTokenPairPatterns on ASWTokenPair {
+/// Adds pattern-matching-related methods to [DioBridgeTokenPair].
+extension DioBridgeTokenPairPatterns on DioBridgeTokenPair {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -88,10 +88,10 @@ extension ASWTokenPairPatterns on ASWTokenPair {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ASWTokenPair value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DioBridgeTokenPair value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _ASWTokenPair() when $default != null:
+case _DioBridgeTokenPair() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -110,10 +110,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ASWTokenPair value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DioBridgeTokenPair value)  $default,){
 final _that = this;
 switch (_that) {
-case _ASWTokenPair():
+case _DioBridgeTokenPair():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -131,10 +131,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ASWTokenPair value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DioBridgeTokenPair value)?  $default,){
 final _that = this;
 switch (_that) {
-case _ASWTokenPair() when $default != null:
+case _DioBridgeTokenPair() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String accessToken,  String? refreshToken,  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _ASWTokenPair() when $default != null:
+case _DioBridgeTokenPair() when $default != null:
 return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
   return orElse();
 
@@ -175,7 +175,7 @@ return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String accessToken,  String? refreshToken,  DateTime? expiresAt)  $default,) {final _that = this;
 switch (_that) {
-case _ASWTokenPair():
+case _DioBridgeTokenPair():
 return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
   throw StateError('Unexpected subclass');
 
@@ -195,7 +195,7 @@ return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String accessToken,  String? refreshToken,  DateTime? expiresAt)?  $default,) {final _that = this;
 switch (_that) {
-case _ASWTokenPair() when $default != null:
+case _DioBridgeTokenPair() when $default != null:
 return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
   return null;
 
@@ -207,25 +207,25 @@ return $default(_that.accessToken,_that.refreshToken,_that.expiresAt);case _:
 /// @nodoc
 
 
-class _ASWTokenPair extends ASWTokenPair {
-  const _ASWTokenPair({required this.accessToken, this.refreshToken, this.expiresAt}): super._();
+class _DioBridgeTokenPair extends DioBridgeTokenPair {
+  const _DioBridgeTokenPair({required this.accessToken, this.refreshToken, this.expiresAt}): super._();
   
 
 @override final  String accessToken;
 @override final  String? refreshToken;
 @override final  DateTime? expiresAt;
 
-/// Create a copy of ASWTokenPair
+/// Create a copy of DioBridgeTokenPair
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ASWTokenPairCopyWith<_ASWTokenPair> get copyWith => __$ASWTokenPairCopyWithImpl<_ASWTokenPair>(this, _$identity);
+_$DioBridgeTokenPairCopyWith<_DioBridgeTokenPair> get copyWith => __$DioBridgeTokenPairCopyWithImpl<_DioBridgeTokenPair>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ASWTokenPair&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DioBridgeTokenPair&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt));
 }
 
 
@@ -234,15 +234,15 @@ int get hashCode => Object.hash(runtimeType,accessToken,refreshToken,expiresAt);
 
 @override
 String toString() {
-  return 'ASWTokenPair(accessToken: $accessToken, refreshToken: $refreshToken, expiresAt: $expiresAt)';
+  return 'DioBridgeTokenPair(accessToken: $accessToken, refreshToken: $refreshToken, expiresAt: $expiresAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ASWTokenPairCopyWith<$Res> implements $ASWTokenPairCopyWith<$Res> {
-  factory _$ASWTokenPairCopyWith(_ASWTokenPair value, $Res Function(_ASWTokenPair) _then) = __$ASWTokenPairCopyWithImpl;
+abstract mixin class _$DioBridgeTokenPairCopyWith<$Res> implements $DioBridgeTokenPairCopyWith<$Res> {
+  factory _$DioBridgeTokenPairCopyWith(_DioBridgeTokenPair value, $Res Function(_DioBridgeTokenPair) _then) = __$DioBridgeTokenPairCopyWithImpl;
 @override @useResult
 $Res call({
  String accessToken, String? refreshToken, DateTime? expiresAt
@@ -253,17 +253,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ASWTokenPairCopyWithImpl<$Res>
-    implements _$ASWTokenPairCopyWith<$Res> {
-  __$ASWTokenPairCopyWithImpl(this._self, this._then);
+class __$DioBridgeTokenPairCopyWithImpl<$Res>
+    implements _$DioBridgeTokenPairCopyWith<$Res> {
+  __$DioBridgeTokenPairCopyWithImpl(this._self, this._then);
 
-  final _ASWTokenPair _self;
-  final $Res Function(_ASWTokenPair) _then;
+  final _DioBridgeTokenPair _self;
+  final $Res Function(_DioBridgeTokenPair) _then;
 
-/// Create a copy of ASWTokenPair
+/// Create a copy of DioBridgeTokenPair
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? accessToken = null,Object? refreshToken = freezed,Object? expiresAt = freezed,}) {
-  return _then(_ASWTokenPair(
+  return _then(_DioBridgeTokenPair(
 accessToken: null == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
 as String,refreshToken: freezed == refreshToken ? _self.refreshToken : refreshToken // ignore: cast_nullable_to_non_nullable
 as String?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable

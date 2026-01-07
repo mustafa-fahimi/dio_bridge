@@ -2,18 +2,18 @@ import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'a_s_w_header.freezed.dart';
+part 'dio_bridge_header.freezed.dart';
 
 @freezed
-sealed class ASWHeader with _$ASWHeader {
-  const ASWHeader._();
+sealed class DioBridgeHeader with _$DioBridgeHeader {
+  const DioBridgeHeader._();
 
-  const factory ASWHeader.formData({Map<String, String>? headers}) = _FormData;
-  const factory ASWHeader.basic({Map<String, String>? headers}) = _Basic;
-  const factory ASWHeader.data({Map<String, String>? headers}) = _Data;
+  const factory DioBridgeHeader.formData({Map<String, String>? headers}) = _FormData;
+  const factory DioBridgeHeader.basic({Map<String, String>? headers}) = _Basic;
+  const factory DioBridgeHeader.data({Map<String, String>? headers}) = _Data;
 }
 
-extension ASWHeaderEx on ASWHeader {
+extension DioBridgeHeaderEx on DioBridgeHeader {
   static String _generateBoundary() {
     final random = Random();
     final chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
