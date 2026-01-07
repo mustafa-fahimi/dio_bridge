@@ -1,4 +1,4 @@
-import 'package:api_service_wrapper/api_service_wrapper.dart';
+import 'package:dio_bridge/dio_bridge.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';

@@ -1,5 +1,5 @@
-import 'package:api_service_wrapper/a_s_w_token_pair.dart';
-import 'package:database_service_wrapper/database_service_wrapper.dart';
+import 'package:dio_bridge/a_s_w_token_pair.dart';
+import 'package:database_bridge/database_bridge.dart';
 
 class ASWTokenManager {
   ASWTokenManager._();
@@ -10,10 +10,10 @@ class ASWTokenManager {
     return _instance!;
   }
 
-  late final DBSWSecureStorageServiceImplementation _storage;
+  late final DatabaseBridgeSecureStorageService _storage;
 
   Future<void> initialize() async {
-    _storage = DBSWSecureStorageServiceImplementation();
+    _storage = DatabaseBridgeSecureStorageService();
     await _storage.initialize();
   }
 

@@ -1,5 +1,5 @@
-import 'package:api_service_wrapper/a_s_w_token_pair.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_bridge/a_s_w_token_pair.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 

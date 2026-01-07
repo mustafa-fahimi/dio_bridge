@@ -27,7 +27,7 @@ dependencies:
 ### Basic Setup
 
 ```dart
-import 'package:api_service_wrapper/api_service_wrapper.dart';
+import 'package:dio_bridge/dio_bridge.dart';
 
 void main() async {
   // Create Dio instance
