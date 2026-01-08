@@ -28,7 +28,7 @@ environment:
   flutter: '>=3.38.0'
 
 dependencies:
-  database_bridge: ^1.0.0
+  database_bridge: ^1.0.1
   dio: ^5.9.0
   flutter:
     sdk: flutter

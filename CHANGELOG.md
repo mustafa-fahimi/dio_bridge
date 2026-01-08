@@ -1,3 +1,25 @@
-## 1.0.0
+# Changelog
 
-### ✨ Initial Release
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-01-08
+
+### Added
+
+- Added `DioBridgeService` class for unified HTTP client interface with Dio
+- Added `getMethod()`, `postMethod()`, `putMethod()`, `deleteMethod()`, and `patchMethod()` for full HTTP method support
+- Added `DioBridgeTokenManager` for secure encrypted token storage and management
+- Added `DioBridgeTokenInterceptor` for automatic Bearer token injection and 401 retry handling
+- Added `DioBridgeTokenPair` class for immutable token storage with expiration tracking
+- Added `DioBridgeOption` class for request configuration with headers, query parameters, and progress callbacks
+- Added `DioBridgeHeader` sealed class for predefined content-type header configurations
+- Added `DioBridgeResponseType` sealed class for type-safe response type handling
+- Added functional error handling using Either monad from fpdart for all HTTP methods
+- Added automatic token refresh capability with configurable callback for seamless 401 handling
+- Added progress tracking support for upload and download operations
+- Added cross-platform secure storage integration via database_bridge package
+- Added extension methods for seamless conversion between Dio and DioBridge types
+- Added comprehensive token lifecycle management with authentication state checking
