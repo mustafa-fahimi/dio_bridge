@@ -1,5 +1,7 @@
-import 'package:dio_bridge/dio_bridge_token_pair.dart';
 import 'package:database_bridge/database_bridge.dart';
+import 'package:dio_bridge/dio_bridge_token_pair.dart';
+import 'package:flutter/foundation.dart';
+import 'package:web/web.dart' as web;
 
 class DioBridgeTokenManager {
   DioBridgeTokenManager._();
@@ -12,9 +14,25 @@ class DioBridgeTokenManager {
 
   late final DatabaseBridgeSecureStorageService _storage;
 
+  // Web storage methods
+  String? _webRead(String key) {
+    return web.window.localStorage.getItem(key);
+  }
+
+  void _webWrite(String key, String value) {
+    web.window.localStorage.setItem(key, value);
+  }
+
+  void _webDelete(String key) {
+    web.window.localStorage.removeItem(key);
+  }
+
   Future<void> initialize() async {
-    _storage = DatabaseBridgeSecureStorageService();
-    await _storage.initialize();
+    if (!kIsWeb) {
+      _storage = DatabaseBridgeSecureStorageService();
+      await _storage.initialize();
+    }
+    // On web, we use localStorage directly - no initialization needed
   }
 
   static const String _accessTokenKey = 'access_token';
@@ -22,11 +40,17 @@ class DioBridgeTokenManager {
   static const String _expiresAtKey = 'token_expires_at';
 
   Future<DioBridgeTokenPair?> get tokenPair async {
-    final accessToken = await _storage.read(_accessTokenKey);
+    final accessToken = kIsWeb
+        ? _webRead(_accessTokenKey)
+        : await _storage.read(_accessTokenKey);
     if (accessToken == null) return null;
 
-    final refreshToken = await _storage.read(_refreshTokenKey);
-    final expiresAtStr = await _storage.read(_expiresAtKey);
+    final refreshToken = kIsWeb
+        ? _webRead(_refreshTokenKey)
+        : await _storage.read(_refreshTokenKey);
+    final expiresAtStr = kIsWeb
+        ? _webRead(_expiresAtKey)
+        : await _storage.read(_expiresAtKey);
     final expiresAt = expiresAtStr != null
         ? DateTime.fromMillisecondsSinceEpoch(int.parse(expiresAtStr))
         : null;
@@ -39,24 +63,37 @@ class DioBridgeTokenManager {
   }
 
   Future<void> setTokenPair(DioBridgeTokenPair tokenPair) async {
-    await _storage.write(_accessTokenKey, tokenPair.accessToken);
-
-    if (tokenPair.refreshToken != null) {
-      await _storage.write(_refreshTokenKey, tokenPair.refreshToken!);
-    }
-
-    if (tokenPair.expiresAt != null) {
-      await _storage.write(_expiresAtKey, tokenPair.expiresAt!.millisecondsSinceEpoch
-          .toString());
+    if (kIsWeb) {
+      _webWrite(_accessTokenKey, tokenPair.accessToken);
+      if (tokenPair.refreshToken != null) {
+        _webWrite(_refreshTokenKey, tokenPair.refreshToken!);
+      }
+      if (tokenPair.expiresAt != null) {
+        _webWrite(_expiresAtKey, tokenPair.expiresAt!.millisecondsSinceEpoch.toString());
+      }
+    } else {
+      await _storage.write(_accessTokenKey, tokenPair.accessToken);
+      if (tokenPair.refreshToken != null) {
+        await _storage.write(_refreshTokenKey, tokenPair.refreshToken!);
+      }
+      if (tokenPair.expiresAt != null) {
+        await _storage.write(_expiresAtKey, tokenPair.expiresAt!.millisecondsSinceEpoch.toString());
+      }
     }
   }
 
   Future<void> clearTokens() async {
-    await Future.wait([
-      _storage.delete(_accessTokenKey),
-      _storage.delete(_refreshTokenKey),
-      _storage.delete(_expiresAtKey),
-    ]);
+    if (kIsWeb) {
+      _webDelete(_accessTokenKey);
+      _webDelete(_refreshTokenKey);
+      _webDelete(_expiresAtKey);
+    } else {
+      await Future.wait([
+        _storage.delete(_accessTokenKey),
+        _storage.delete(_refreshTokenKey),
+        _storage.delete(_expiresAtKey),
+      ]);
+    }
   }
 
   Future<bool> get isAuthenticated async {

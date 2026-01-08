@@ -43,7 +43,7 @@ A Flutter wrapper around Dio HTTP client providing unified API service interface
 ## Features
 
 - ✅ **HTTP Methods**: Full support for GET, POST, PUT, DELETE, PATCH with type-safe responses
-- ✅ **Token Management**: Secure encrypted storage, automatic Bearer header injection, and token refresh
+- ✅ **Token Management**: Secure encrypted storage on native platforms, localStorage on web, automatic Bearer header injection, and token refresh
 - ✅ **Error Handling**: Functional error handling using Either monad from fpdart
 - ✅ **Progress Tracking**: Built-in upload/download progress callbacks
 - ✅ **Flexible Configuration**: Custom headers, query parameters, response types, and interceptors
@@ -134,7 +134,7 @@ final result = await apiService.getMethod<String>(
 ### Token Management
 
 ```dart
-// Set tokens (securely stored)
+// Set tokens (securely stored on native platforms, localStorage on web)
 await apiService.setTokens(DioBridgeTokenPair(
   accessToken: 'your-access-token',
   refreshToken: 'your-refresh-token',
@@ -151,6 +151,8 @@ final tokens = await apiService.currentTokens;
 // Clear tokens
 await apiService.clearTokens();
 ```
+
+> **Note**: On web platforms, tokens are stored using `localStorage` and are not cryptographically secure. On native platforms (iOS, Android, desktop), tokens are stored securely using encrypted storage.
 
 ### Automatic Token Refresh
 

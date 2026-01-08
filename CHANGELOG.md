@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-01-08
+
+### Added
+
+- Added `web` package dependency for modern web API support
+
+### Changed
+
+- Updated `DioBridgeTokenManager` to use conditional storage based on platform
+- Changed web token storage to use `localStorage` instead of unsupported secure storage
+- Updated documentation to clarify security differences between web and native platforms
+
+### Fixed
+
+- Fixed web platform support that was previously declared but non-functional
+- Fixed token storage operations to work properly on web platforms using localStorage
+
 ## [1.0.0] - 2026-01-08
 
 ### Added
